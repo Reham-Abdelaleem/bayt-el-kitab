@@ -39,18 +39,21 @@ No installation is needed.
 2. Open `index.html` in any modern browser (Chrome, Edge, Firefox, Safari).
 3. Navigate using the header links.
 
+Note for Firefox: when a file is opened directly, Firefox keeps each page's browser storage separate. The order is therefore also carried in the page links (`?cart=...`), so it stays visible on the order page. Running a local server (see below) avoids this entirely.
+
 To check the mobile layout, open the browser developer tools (F12 or Ctrl+Shift+M / Cmd+Shift+M) and choose a phone size such as 390 × 844.
 
 Optional: serve the folder with any static server (for example `python -m http.server`) and visit `http://localhost:8000`.
 
 ## Key features
 
-- **Catalogue rendering:** `renderCatalogue()` loops over the `BOOKS` array and creates one table row per book with `document.createElement`.
+- **Catalogue rendering:** `renderCatalogue()` loops over the `BOOKS` array and creates one card per book with `document.createElement`. Cards form a grid: one column on phones, two on tablets, three on desktops.
 - **Search:** `filterBooks()` matches the query against both title and author, ignoring case and surrounding spaces. Results update as the visitor types and on submit. An empty-state message appears when nothing matches.
 - **Stock status:** Books marked out of stock show "Currently unavailable" and their "Add to Order" button is disabled.
 - **Order cart:** Each click on "Add to Order" creates a new `CartItem` object (title, quantity, price in EGP). Adding the same book again increases its quantity. The order is saved in `localStorage` so it carries over to the order page.
-- **Form validation:** `validateOrderForm()` blocks submission when the Full Name or Delivery Address is blank (or only spaces). It shows the client's alert message and an inline message next to each field.
-- **Responsive design:** On narrow screens the catalogue table turns each row into a stacked card, so no horizontal scrolling occurs.
+- **Form validation:** All four fields are required. Name needs at least 2 characters, address at least 5, email must be a valid address, and phone must be an Egyptian mobile number (010, 011, 012 or 015 followed by 8 digits). Each field is checked when the visitor leaves it, and its message clears as soon as it is fixed.
+- **Responsive design:** Flexbox and CSS grid adapt the layout to the screen. Nothing scrolls sideways at 360 px or wider.
+- **Motion:** Cards and sections fade in on load. Cards lift on hover (mouse devices only). All motion is switched off when the device requests reduced motion.
 
 ## Brand
 
@@ -66,10 +69,10 @@ Optional: serve the folder with any static server (for example `python -m http.s
 
 ## Screenshots
 
-Captured in headless Google Chrome (1280 px desktop, 390 px mobile). They are stored in `docs/screenshots/`.
+Captured in headless Google Chrome (1280 px desktop, 390 px mobile) with animations switched off. They are stored in `docs/screenshots/`.
 
 | Page | Desktop | Mobile |
 | --- | --- | --- |
-| Home | `docs/screenshots/index_desktop.png` | `docs/screenshots/index_mobile.png` |
-| Catalogue | `docs/screenshots/catalogue_desktop.png` | `docs/screenshots/catalogue_mobile.png` |
-| Order Form | `docs/screenshots/order_desktop.png` | `docs/screenshots/order_mobile.png` |
+| Home | ![Home on desktop](docs/screenshots/index_desktop.png) | ![Home on mobile](docs/screenshots/index_mobile.png) |
+| Catalogue | ![Catalogue on desktop](docs/screenshots/catalogue_desktop.png) | ![Catalogue on mobile](docs/screenshots/catalogue_mobile.png) |
+| Order Form | ![Order form on desktop](docs/screenshots/order_desktop.png) | ![Order form on mobile](docs/screenshots/order_mobile.png) |
