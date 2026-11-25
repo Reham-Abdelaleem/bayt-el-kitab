@@ -1,0 +1,818 @@
+/* ==========================================================================
+   Bayt El Kitab - stylesheet
+   Brand palette (from brand_notes.md):
+     Mediterranean Navy  #1A365D  - text, headings, navigation, primary buttons
+     Parchment White     #F9F6F0  - page background
+     Terracotta Red      #C05640  - call-to-action buttons and EGP prices
+     Olive Wood          #8A785E  - secondary text, borders, footer
+   Layout is mobile-first and built with Flexbox. Horizontal page scrolling
+   is prevented on narrow screens by stacking table rows into cards.
+   ========================================================================== */
+
+/* ---------- Design tokens ---------- */
+:root {
+  --navy: #1A365D;
+  --parchment: #F9F6F0;
+  --terracotta: #C05640;
+  --terracotta-dark: #A9472F;   /* darker hover shade of terracotta for contrast */
+  --olive: #8A785E;
+  --white: #FFFFFF;
+  --border-soft: #E4DDD0;       /* light tint of olive for dividers */
+  --radius: 6px;                /* brand: 4-6px rounded corners */
+  --max-width: 1080px;
+  --shadow: 0 2px 6px rgba(26, 54, 93, 0.08);
+}
+
+/* ---------- Base ---------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  max-width: 100%;
+  overflow-x: hidden;           /* belt-and-braces guard against sideways scroll */
+}
+
+body {
+  font-family: "Cairo", "Lato", Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--navy);           /* high contrast on parchment */
+  background-color: var(--parchment);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Lora", "Playfair Display", Georgia, serif;
+  color: var(--navy);
+  line-height: 1.25;
+  margin: 0 0 0.6em;
+}
+
+h1 { font-size: 2rem; }
+h2 { font-size: 1.5rem; }
+h3 { font-size: 1.2rem; }
+
+p {
+  margin: 0 0 1em;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: var(--navy);
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid var(--terracotta);
+  outline-offset: 2px;
+}
+
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+main {
+  flex: 1 0 auto;
+  padding: 2rem 0 3rem;
+}
+
+/* ---------- Header and navigation ---------- */
+.site-header {
+  background-color: var(--navy);
+  color: var(--parchment);
+}
+
+.site-header .container {
+  display: flex;
+  flex-direction: column;       /* stacked on phones */
+  align-items: center;
+  gap: 0.75rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.logo {
+  font-family: "Lora", Georgia, serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--parchment);
+  text-decoration: none;
+}
+
+.logo .arabic {
+  font-family: "Amiri", "Cairo", serif;
+  font-weight: 400;
+  margin-inline-start: 0.4rem;
+  color: var(--border-soft);
+}
+
+.site-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem 1.25rem;
+}
+
+.site-nav a {
+  color: var(--parchment);
+  text-decoration: none;
+  font-weight: 600;
+  padding: 0.25rem 0.1rem;
+  border-bottom: 2px solid transparent;
+}
+
+.site-nav a:hover,
+.site-nav a[aria-current="page"] {
+  border-bottom-color: var(--terracotta);
+}
+
+@media (min-width: 720px) {
+  .site-header .container {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+/* ---------- Buttons ---------- */
+.btn {
+  display: inline-block;
+  background-color: var(--terracotta);
+  color: var(--white);
+  border: none;
+  border-radius: var(--radius);
+  padding: 0.6rem 1.2rem;
+  font: inherit;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.btn:hover {
+  background-color: var(--terracotta-dark);
+}
+
+.btn-secondary {
+  background-color: var(--navy);
+}
+
+.btn-secondary:hover {
+  background-color: #132944;
+}
+
+/* ---------- Hero (home page) ---------- */
+.hero {
+  text-align: center;
+  padding: 2rem 0 1rem;
+}
+
+.hero h1 {
+  font-size: 2.2rem;
+  margin-bottom: 0.3rem;
+}
+
+.hero .subheading {
+  font-family: "Lora", Georgia, serif;
+  font-style: italic;
+  color: var(--olive);
+  font-size: 1.15rem;
+  margin-bottom: 1.5rem;
+}
+
+.welcome-message {
+  max-width: 720px;
+  margin: 0 auto 2rem;
+  font-size: 1.05rem;
+}
+
+.card {
+  background-color: var(--white);
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 1.5rem;
+  max-width: 760px;
+  margin: 0 auto 2rem;
+}
+
+.card .section-label {
+  color: var(--olive);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.8rem;
+  margin: 0 0 0.25rem;
+}
+
+.cta {
+  text-align: center;
+}
+
+/* ---------- Catalogue page ---------- */
+.page-header {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.page-header .subheading {
+  color: var(--olive);
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.search-section {
+  background-color: var(--white);
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius);
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.search-form {
+  display: flex;
+  flex-direction: column;       /* stacked on phones */
+  gap: 0.6rem;
+}
+
+.search-form label {
+  font-weight: 700;
+}
+
+.search-form .search-row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.search-results-count {
+  color: var(--olive);
+  font-size: 0.95rem;
+  margin: 0.75rem 0 0;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+textarea {
+  width: 100%;
+  font: inherit;
+  color: var(--navy);
+  background-color: var(--white);
+  border: 1px solid var(--olive);
+  border-radius: var(--radius);
+  padding: 0.6rem 0.75rem;
+}
+
+textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+@media (min-width: 620px) {
+  .search-form .search-row {
+    flex-direction: row;
+  }
+  .search-form .search-row input {
+    flex: 1 1 auto;
+  }
+}
+
+/* Catalogue table. On narrow screens each row becomes a stacked card,
+   so no horizontal scrolling occurs. On wider screens it is a normal table. */
+.catalogue-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: var(--white);
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius);
+}
+
+.catalogue-table thead {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);          /* visually hidden, still read by screen readers */
+}
+
+.catalogue-table tbody tr {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem 0.75rem;
+  padding: 1rem;
+  border-bottom: 1px solid var(--border-soft);
+}
+
+.catalogue-table tbody tr:last-child {
+  border-bottom: none;
+}
+
+.catalogue-table td {
+  display: block;
+  padding: 0;
+  border: none;
+}
+
+/* Cover cell fixed width on phones so the tile never shrinks */
+.catalogue-table tbody td.cover-cell {
+  flex: 0 0 56px;
+}
+
+/* Cover placeholder: a navy tile with the title's initial */
+.cover {
+  width: 56px;
+  height: 80px;
+  border-radius: 3px;
+  background: linear-gradient(160deg, var(--navy), #2C4F7C);
+  color: var(--parchment);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Lora", Georgia, serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  box-shadow: var(--shadow);
+}
+
+.cell-title {
+  flex: 1 1 60%;
+  font-family: "Lora", Georgia, serif;
+  font-weight: 700;
+  font-size: 1.05rem;
+}
+
+.cell-author,
+.cell-category {
+  color: var(--olive);
+  font-size: 0.95rem;
+}
+
+.cell-category::before {
+  content: "Category: ";
+  font-weight: 700;
+}
+
+.cell-author::before {
+  content: "by ";
+}
+
+.cell-price {
+  color: var(--terracotta);
+  font-weight: 700;
+}
+
+.cell-price::after {
+  content: " EGP";
+}
+
+.cell-stock {
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.cell-stock.in-stock {
+  color: #2E6B45;
+}
+
+.cell-stock.out-of-stock {
+  color: var(--olive);
+}
+
+.cell-action {
+  margin-inline-start: auto;
+}
+
+.cell-action .btn {
+  padding: 0.45rem 0.9rem;
+  font-size: 0.9rem;
+}
+
+.cell-action .btn:disabled {
+  background-color: #C9BFAE;
+  cursor: not-allowed;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 2rem 1rem;
+  color: var(--olive);
+  background-color: var(--white);
+  border: 1px dashed var(--olive);
+  border-radius: var(--radius);
+}
+
+.toast {
+  position: fixed;
+  left: 50%;
+  bottom: 1.25rem;
+  transform: translateX(-50%);
+  max-width: calc(100% - 2rem);
+  background-color: var(--navy);
+  color: var(--parchment);
+  padding: 0.75rem 1.2rem;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 10;
+}
+
+.toast.show {
+  opacity: 1;
+}
+
+@media (min-width: 760px) {
+  /* Switch to a real table layout on wider screens */
+  .catalogue-table thead {
+    position: static;
+    width: auto;
+    height: auto;
+    overflow: visible;
+    clip: auto;
+  }
+
+  .catalogue-table thead tr {
+    display: table-row;
+    background-color: var(--navy);
+  }
+
+  .catalogue-table thead th {
+    display: table-cell;
+    color: var(--parchment);
+    text-align: left;
+    padding: 0.75rem;
+    font-weight: 700;
+  }
+
+  .catalogue-table tbody tr {
+    display: table-row;
+    padding: 0;
+  }
+
+  .catalogue-table tbody td {
+    display: table-cell;
+    padding: 0.75rem;
+    vertical-align: middle;
+    border-bottom: 1px solid var(--border-soft);
+  }
+
+  .catalogue-table tbody tr:last-child td {
+    border-bottom: none;
+  }
+
+  .catalogue-table tbody td.cover-cell {
+    flex: none;
+  }
+
+  .cover {
+    width: 40px;
+    height: 56px;
+    font-size: 1.1rem;
+  }
+
+  .cell-category::before,
+  .cell-author::before,
+  .cell-price::after {
+    content: none;               /* labels are headings on wide screens */
+  }
+
+  .cell-action {
+    margin-inline-start: 0;
+  }
+
+  .cell-title {
+    font-size: 1rem;
+  }
+}
+
+/* ---------- Order form ---------- */
+.order-form {
+  background-color: var(--white);
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 1.5rem;
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+
+.form-group label {
+  font-weight: 700;
+  margin-bottom: 0.3rem;
+}
+
+.form-group .hint {
+  font-size: 0.85rem;
+  color: var(--olive);
+  margin-bottom: 0.3rem;
+}
+
+.required-mark {
+  color: var(--terracotta);
+}
+
+.order-form input[aria-invalid="true"],
+.order-form textarea[aria-invalid="true"] {
+  border: 2px solid var(--terracotta);
+}
+
+.field-error {
+  color: var(--terracotta-dark);
+  font-size: 0.9rem;
+  margin: 0.3rem 0 0;
+}
+
+.field-error:empty {
+  display: none;
+}
+
+.order-summary {
+  background-color: var(--parchment);
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius);
+  padding: 1rem;
+  margin-bottom: 1.25rem;
+}
+
+.order-summary ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.order-summary li {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.4rem 0;
+  border-bottom: 1px dashed var(--border-soft);
+}
+
+.order-summary li:last-child {
+  border-bottom: none;
+}
+
+.order-total {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 700;
+  margin-top: 0.6rem;
+}
+
+.order-total span:last-child {
+  color: var(--terracotta);
+}
+
+.thank-you {
+  text-align: center;
+  padding: 2rem 1.25rem;
+}
+
+.thank-you h2 {
+  color: var(--navy);
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* Hides content visually but keeps it available to screen readers */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+/* ---------- Footer ---------- */
+.site-footer {
+  background-color: var(--olive);
+  color: var(--white);
+  padding: 1.25rem 0;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.site-footer p {
+  margin: 0;
+}
+
+/* ---------- Larger screens ---------- */
+@media (min-width: 900px) {
+  h1 {
+    font-size: 2.4rem;
+  }
+
+  .hero h1 {
+    font-size: 2.8rem;
+  }
+
+  .card,
+  .order-form {
+    padding: 2rem;
+  }
+}
+
+/* ==========================================================================
+   Card grid (desktop/tablet) and motion
+   Phones keep the stacked card layout defined above.
+   ========================================================================== */
+
+/* ---------- Keyframes ---------- */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: none; }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* Page sections fade up on load, one after another */
+main > * {
+  animation: fadeUp 0.55s ease backwards;
+}
+main > *:nth-child(2) { animation-delay: 0.08s; }
+main > *:nth-child(3) { animation-delay: 0.16s; }
+
+/* Each catalogue card fades up with a delay based on its position (--i, set in app.js) */
+.catalogue-table tbody tr {
+  animation: fadeUp 0.45s ease backwards;
+  animation-delay: calc(var(--i, 0) * 40ms);
+}
+
+/* Validation messages fade in as they appear */
+.field-error:not(:empty) {
+  animation: fadeIn 0.25s ease;
+}
+
+/* Buttons give a small press effect */
+.btn {
+  transition: background-color 0.2s ease, transform 0.15s ease;
+}
+
+.btn:active:not(:disabled) {
+  transform: scale(0.97);
+}
+
+/* Toast slides up while it fades in */
+.toast {
+  transform: translate(-50%, 12px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.toast.show {
+  transform: translate(-50%, 0);
+}
+
+/* Thank-you panel fades in */
+.thank-you:not(.hidden) {
+  animation: fadeUp 0.5s ease backwards;
+}
+
+/* ---------- Card grid: tablets and desktops ---------- */
+@media (min-width: 760px) {
+  .catalogue-table {
+    display: block;
+    border: none;
+    background: transparent;
+  }
+
+  /* Keep the headings for screen readers only */
+  .catalogue-table thead {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+  }
+
+  /* Two columns on tablets, three on desktops */
+  .catalogue-table tbody {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.25rem;
+  }
+
+  @media (min-width: 1000px) {
+    .catalogue-table tbody {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+
+  .catalogue-table tbody tr {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.6rem;
+    padding: 1rem;
+    background-color: var(--white);
+    border: 1px solid var(--border-soft);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  }
+
+  .catalogue-table tbody td {
+    display: block;
+    width: 100%;
+    padding: 0;
+    border: none;
+  }
+
+  .catalogue-table tbody td.cover-cell {
+    flex: none;
+    width: 100%;
+  }
+
+  .cover {
+    width: 100%;
+    height: 150px;
+    font-size: 3rem;
+    transition: transform 0.3s ease;
+  }
+
+  /* Undo the phone-only flex rules so every cell stacks inside the card */
+  .catalogue-table tbody tr {
+    flex-wrap: nowrap;
+    margin: 0;
+  }
+
+  .cell-title,
+  .cell-author,
+  .cell-category,
+  .cell-price,
+  .cell-action {
+    flex: none;
+    width: 100%;
+    margin: 0;
+  }
+
+  .cell-title {
+    font-size: 1.1rem;
+  }
+
+  .cell-action .btn {
+    width: 100%;
+  }
+}
+
+/* ---------- Hover effects: only on devices with a mouse or trackpad ---------- */
+@media (min-width: 760px) and (hover: hover) {
+  .catalogue-table tbody tr:hover,
+  .catalogue-table tbody tr:focus-within {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 26px rgba(26, 54, 93, 0.15);
+    border-color: var(--olive);
+  }
+
+  .catalogue-table tbody tr:hover .cover {
+    transform: scale(1.04);
+  }
+
+  .btn:hover:not(:disabled) {
+    transform: translateY(-1px);
+  }
+}
+
+/* ---------- Reduced motion: switch off all animation for users who ask ---------- */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
