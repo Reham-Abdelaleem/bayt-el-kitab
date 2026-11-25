@@ -1,0 +1,282 @@
+[
+  {
+    "title": "The Cairo Trilogy",
+    "author": "Naguib Mahfouz",
+    "category": "Fiction",
+    "price_egp": 450,
+    "in_stock": true
+  },
+  {
+    "title": "The Yacoubian Building",
+    "author": "Alaa Al Aswany",
+    "category": "Fiction",
+    "price_egp": 250,
+    "in_stock": true
+  },
+  {
+    "title": "Memory in the Flesh",
+    "author": "Ahlam Mosteghanemi",
+    "category": "Fiction",
+    "price_egp": 300,
+    "in_stock": false
+  },
+  {
+    "title": "My Name is Red",
+    "author": "Orhan Pamuk",
+    "category": "Fiction",
+    "price_egp": 400,
+    "in_stock": true
+  },
+  {
+    "title": "One Hundred Years of Solitude",
+    "author": "Gabriel García Márquez",
+    "category": "Fiction",
+    "price_egp": 350,
+    "in_stock": true
+  },
+  {
+    "title": "Children of the Alley",
+    "author": "Naguib Mahfouz",
+    "category": "Fiction",
+    "price_egp": 280,
+    "in_stock": true
+  },
+  {
+    "title": "Taxi",
+    "author": "Khaled Al Khamissi",
+    "category": "Fiction",
+    "price_egp": 180,
+    "in_stock": true
+  },
+  {
+    "title": "Frankenstein in Baghdad",
+    "author": "Ahmed Saadawi",
+    "category": "Fiction",
+    "price_egp": 320,
+    "in_stock": true
+  },
+  {
+    "title": "Season of Migration to the North",
+    "author": "Tayeb Salih",
+    "category": "Fiction",
+    "price_egp": 220,
+    "in_stock": false
+  },
+  {
+    "title": "Utopia",
+    "author": "Ahmed Khaled Tawfik",
+    "category": "Fiction",
+    "price_egp": 200,
+    "in_stock": true
+  },
+  {
+    "title": "The Days",
+    "author": "Taha Hussein",
+    "category": "History",
+    "price_egp": 260,
+    "in_stock": true
+  },
+  {
+    "title": "A History of Egypt: From Earliest Times to the Present",
+    "author": "Jason Thompson",
+    "category": "History",
+    "price_egp": 650,
+    "in_stock": true
+  },
+  {
+    "title": "Alexandria: City of Memory",
+    "author": "Michael Haag",
+    "category": "History",
+    "price_egp": 550,
+    "in_stock": false
+  },
+  {
+    "title": "The Crusades Through Arab Eyes",
+    "author": "Amin Maalouf",
+    "category": "History",
+    "price_egp": 380,
+    "in_stock": true
+  },
+  {
+    "title": "Egypt on the Brink",
+    "author": "Tarek Osman",
+    "category": "History",
+    "price_egp": 420,
+    "in_stock": true
+  },
+  {
+    "title": "Cleopatra: A Life",
+    "author": "Stacy Schiff",
+    "category": "History",
+    "price_egp": 480,
+    "in_stock": false
+  },
+  {
+    "title": "The Arabs: A History",
+    "author": "Eugene Rogan",
+    "category": "History",
+    "price_egp": 750,
+    "in_stock": true
+  },
+  {
+    "title": "In the Footsteps of the Prophet",
+    "author": "Tariq Ramadan",
+    "category": "History",
+    "price_egp": 340,
+    "in_stock": true
+  },
+  {
+    "title": "Destiny Disrupted",
+    "author": "Tamim Ansary",
+    "category": "History",
+    "price_egp": 450,
+    "in_stock": true
+  },
+  {
+    "title": "Pharaohs of the Sun",
+    "author": "Cyril Aldred",
+    "category": "History",
+    "price_egp": 600,
+    "in_stock": true
+  },
+  {
+    "title": "Mural",
+    "author": "Mahmoud Darwish",
+    "category": "Poetry",
+    "price_egp": 240,
+    "in_stock": true
+  },
+  {
+    "title": "The Prophet",
+    "author": "Kahlil Gibran",
+    "category": "Poetry",
+    "price_egp": 180,
+    "in_stock": true
+  },
+  {
+    "title": "Republic of Love",
+    "author": "Nizar Qabbani",
+    "category": "Poetry",
+    "price_egp": 260,
+    "in_stock": false
+  },
+  {
+    "title": "The Essential Rumi",
+    "author": "Jalal al-Din Rumi",
+    "category": "Poetry",
+    "price_egp": 350,
+    "in_stock": true
+  },
+  {
+    "title": "A River Dies of Thirst",
+    "author": "Mahmoud Darwish",
+    "category": "Poetry",
+    "price_egp": 210,
+    "in_stock": true
+  },
+  {
+    "title": "Songs of Mihyar the Damascene",
+    "author": "Adunis",
+    "category": "Poetry",
+    "price_egp": 300,
+    "in_stock": true
+  },
+  {
+    "title": "Leaves of Grass",
+    "author": "Walt Whitman",
+    "category": "Poetry",
+    "price_egp": 320,
+    "in_stock": false
+  },
+  {
+    "title": "The Rubaiyat",
+    "author": "Omar Khayyam",
+    "category": "Poetry",
+    "price_egp": 190,
+    "in_stock": true
+  },
+  {
+    "title": "Selected Poems",
+    "author": "Ahmed Shawqi",
+    "category": "Poetry",
+    "price_egp": 250,
+    "in_stock": true
+  },
+  {
+    "title": "Butterfly Burden",
+    "author": "Mahmoud Darwish",
+    "category": "Poetry",
+    "price_egp": 230,
+    "in_stock": true
+  },
+  {
+    "title": "The Voyage of Time",
+    "author": "Ahmed Zewail",
+    "category": "Science",
+    "price_egp": 450,
+    "in_stock": true
+  },
+  {
+    "title": "Apollo's Eye",
+    "author": "Farouk El-Baz",
+    "category": "Science",
+    "price_egp": 500,
+    "in_stock": true
+  },
+  {
+    "title": "A Brief History of Time",
+    "author": "Stephen Hawking",
+    "category": "Science",
+    "price_egp": 420,
+    "in_stock": false
+  },
+  {
+    "title": "Cosmos",
+    "author": "Carl Sagan",
+    "category": "Science",
+    "price_egp": 550,
+    "in_stock": true
+  },
+  {
+    "title": "The Elegant Universe",
+    "author": "Brian Greene",
+    "category": "Science",
+    "price_egp": 580,
+    "in_stock": true
+  },
+  {
+    "title": "Astrophysics for People in a Hurry",
+    "author": "Neil deGrasse Tyson",
+    "category": "Science",
+    "price_egp": 350,
+    "in_stock": true
+  },
+  {
+    "title": "The Immortal Life of Henrietta Lacks",
+    "author": "Rebecca Skloot",
+    "category": "Science",
+    "price_egp": 400,
+    "in_stock": false
+  },
+  {
+    "title": "Thinking, Fast and Slow",
+    "author": "Daniel Kahneman",
+    "category": "Science",
+    "price_egp": 650,
+    "in_stock": true
+  },
+  {
+    "title": "Silent Spring",
+    "author": "Rachel Carson",
+    "category": "Science",
+    "price_egp": 320,
+    "in_stock": true
+  },
+  {
+    "title": "The Gene: An Intimate History",
+    "author": "Siddhartha Mukherjee",
+    "category": "Science",
+    "price_egp": 700,
+    "in_stock": true
+  }
+]
