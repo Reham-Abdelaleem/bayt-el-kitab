@@ -21,7 +21,10 @@ bayt-el-kitab-mvp/
 │   ├── brand_notes.md    # brand guidelines
 │   └── page_content.md   # official website copy
 ├── css/
-│   └── style.css         # brand styling, mobile-first Flexbox layout
+│   └── style.css         # brand styling, card grid, motion, Flexbox layout
+├── docs/
+│   ├── Bayt_El_Kitab_MVP_Case_Study.pdf  # case study with test results
+│   └── screenshots/      # desktop and mobile screenshots used in this README
 ├── js/
 │   ├── app.js            # CartItem class, search, rendering, validation
 │   └── data.js           # books.json converted to a JavaScript array
