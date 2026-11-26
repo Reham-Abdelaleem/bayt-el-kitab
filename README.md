@@ -54,7 +54,7 @@ Optional: serve the folder with any static server (for example `python -m http.s
 - **Search:** `filterBooks()` matches the query against both title and author, ignoring case and surrounding spaces. Results update as the visitor types and on submit. An empty-state message appears when nothing matches.
 - **Stock status:** Books marked out of stock show "Currently unavailable" and their "Add to Order" button is disabled.
 - **Order cart:** Each click on "Add to Order" creates a new `CartItem` object (title, quantity, price in EGP). Adding the same book again increases its quantity. The order is saved in `localStorage` so it carries over to the order page.
-- **Form validation:** All four fields are required. Name needs at least 2 characters, address at least 5, email must be a valid address, and phone must be an Egyptian mobile number (010, 011, 012 or 015 followed by 8 digits). Each field is checked when the visitor leaves it, and its message clears as soon as it is fixed.
+- **Form validation:** All four fields are required. Name needs at least 5 characters, address at least 5, email must be a valid address, and phone must be an Egyptian mobile number (010, 011, 012 or 015 followed by 8 digits). Each field is checked when the visitor leaves it, and its message clears as soon as it is fixed.
 - **Responsive design:** Flexbox and CSS grid adapt the layout to the screen. Nothing scrolls sideways at 360 px or wider.
 - **Motion:** Cards and sections fade in on load. Cards lift on hover (mouse devices only). All motion is switched off when the device requests reduced motion.
 
